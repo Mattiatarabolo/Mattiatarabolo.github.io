@@ -5,12 +5,20 @@
     <link>https://Mattiatarabolo.github.io/publication/</link>
       <atom:link href="https://Mattiatarabolo.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jun 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://Mattiatarabolo.github.io/media/icon_hu9d4be0919d22f6aed9d28e29cfe13049_8135_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://Mattiatarabolo.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>Small-Coupling Dynamic Cavity: a Bayesian mean-field framework for epidemic inference</title>
+      <link>https://Mattiatarabolo.github.io/publication/braunstein-small-coupling-2023/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/braunstein-small-coupling-2023/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bayesian variable selection for environment-dependent phylogenetic models of diversification</title>

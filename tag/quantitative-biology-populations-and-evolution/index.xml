@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quantitative Biology - Populations and Evolution | Mattia Tarabolo</title>
+    <link>https://Mattiatarabolo.github.io/tag/quantitative-biology-populations-and-evolution/</link>
+      <atom:link href="https://Mattiatarabolo.github.io/tag/quantitative-biology-populations-and-evolution/index.xml" rel="self" type="application/rss+xml" />
+    <description>Quantitative Biology - Populations and Evolution</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://Mattiatarabolo.github.io/media/icon_hu9d4be0919d22f6aed9d28e29cfe13049_8135_512x512_fill_lanczos_center_3.png</url>
+      <title>Quantitative Biology - Populations and Evolution</title>
+      <link>https://Mattiatarabolo.github.io/tag/quantitative-biology-populations-and-evolution/</link>
+    </image>
+    
+    <item>
+      <title>Small-Coupling Dynamic Cavity: a Bayesian mean-field framework for epidemic inference</title>
+      <link>https://Mattiatarabolo.github.io/publication/braunstein-small-coupling-2023/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/braunstein-small-coupling-2023/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
