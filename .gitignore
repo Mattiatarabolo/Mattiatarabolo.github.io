@@ -1,1 +1,5 @@
 /Manifest.toml
+.ipynb_checkpoints
+notebooks/GECaM_functiontest.ipynb
+notebooks/Population_Dynamics.ipynb
+notebooks/Population_Dynamics.ipynb
