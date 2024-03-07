@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coupled Langevin equations | Mattia Tarabolo</title>
+    <link>https://Mattiatarabolo.github.io/tag/coupled-langevin-equations/</link>
+      <atom:link href="https://Mattiatarabolo.github.io/tag/coupled-langevin-equations/index.xml" rel="self" type="application/rss+xml" />
+    <description>Coupled Langevin equations</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://Mattiatarabolo.github.io/media/icon_hu9d4be0919d22f6aed9d28e29cfe13049_8135_512x512_fill_lanczos_center_3.png</url>
+      <title>Coupled Langevin equations</title>
+      <link>https://Mattiatarabolo.github.io/tag/coupled-langevin-equations/</link>
+    </image>
+    
+    <item>
+      <title>Gaussian approximation of dynamic cavity equations for linearly-coupled stochastic dynamics</title>
+      <link>https://Mattiatarabolo.github.io/project/gecam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/project/gecam/</guid>
+      <description>&lt;p&gt;Stochastic models on diluted networks are fundamental tools for understanding various systems, yet their analytical solutions are often elusive. In this paper, we adapt the cavity method to handle continuous time and variables, providing a basis for our analysis. We then employ a second-order expansion in interaction strength to effectively address systems with additive thermal noise and linear drifts. Additionally, we introduce a closure scheme, utilizing a perturbative expansion tailored for accommodating dynamics featuring non-linear drifts or non-additive noise. Our method offers a systematic approach to analyzing complex network dynamics, with potential applications in diverse fields.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

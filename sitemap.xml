@@ -88,7 +88,16 @@
     <loc>https://Mattiatarabolo.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://Mattiatarabolo.github.io/tag/coupled-langevin-equations/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://Mattiatarabolo.github.io/cv/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://Mattiatarabolo.github.io/project/gecam/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://Mattiatarabolo.github.io/tag/path-integral-approaches-to-out-of-equilibrium-systems/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

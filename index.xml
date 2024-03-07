@@ -62,5 +62,14 @@ The SCDC method is derived for the Susceptible-Infected (SI) model and straightf
       <description></description>
     </item>
     
+    <item>
+      <title>Gaussian approximation of dynamic cavity equations for linearly-coupled stochastic dynamics</title>
+      <link>https://Mattiatarabolo.github.io/project/gecam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/project/gecam/</guid>
+      <description>&lt;p&gt;Stochastic models on diluted networks are fundamental tools for understanding various systems, yet their analytical solutions are often elusive. In this paper, we adapt the cavity method to handle continuous time and variables, providing a basis for our analysis. We then employ a second-order expansion in interaction strength to effectively address systems with additive thermal noise and linear drifts. Additionally, we introduce a closure scheme, utilizing a perturbative expansion tailored for accommodating dynamics featuring non-linear drifts or non-additive noise. Our method offers a systematic approach to analyzing complex network dynamics, with potential applications in diverse fields.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
