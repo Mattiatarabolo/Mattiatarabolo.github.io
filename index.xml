@@ -17,8 +17,7 @@
       <link>https://Mattiatarabolo.github.io/miscellaneous/bouchaud_mezard/</link>
       <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://Mattiatarabolo.github.io/miscellaneous/bouchaud_mezard/</guid>
-      <description>&lt;h2 id=&#34;descrizione-del-progetto&#34;&gt;Descrizione del Progetto&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;Bouchaud-Mézard&lt;/strong&gt; model is a cornerstone of econophysics. It describes how wealth is accumulated and redistributed in a population of agents interacting on a exchange network.&lt;/p&gt;
+      <description>&lt;p&gt;The &lt;strong&gt;Bouchaud-Mézard&lt;/strong&gt; model is a cornerstone of econophysics. It describes how wealth is accumulated and redistributed in a population of agents interacting on a exchange network.&lt;/p&gt;
 &lt;p&gt;The evolution of wealth $x_i$ of agent $i$ follows the following coupled SDE:
 $$dx_i(t) = J \sum_{j \in \partial i} (x_j(t) - x_i(t)) dt + \sigma x_i(t) d\eta_i(t),$$
 where $J \sum_{j \in \partial i} (x_j(t) - x_i(t))$ represents the exchange of wealth with neighboring agents, while $\sigma x_i(t) d\eta_i(t)$ represents the change of wealth due to investment in the stock-market. We defined $\partial i$ as the neighborood of agent $i$.&lt;/p&gt;
