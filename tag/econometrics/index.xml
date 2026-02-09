@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Econometrics | Mattia Tarabolo</title>
+    <link>https://Mattiatarabolo.github.io/tag/econometrics/</link>
+      <atom:link href="https://Mattiatarabolo.github.io/tag/econometrics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Econometrics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://Mattiatarabolo.github.io/media/icon_hu9d4be0919d22f6aed9d28e29cfe13049_8135_512x512_fill_lanczos_center_3.png</url>
+      <title>Econometrics</title>
+      <link>https://Mattiatarabolo.github.io/tag/econometrics/</link>
+    </image>
+    
+    <item>
+      <title>Bouchaud-Mézard Model</title>
+      <link>https://Mattiatarabolo.github.io/miscellaneous/bouchaud_mezard/</link>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/miscellaneous/bouchaud_mezard/</guid>
+      <description>&lt;h2 id=&#34;descrizione-del-progetto&#34;&gt;Descrizione del Progetto&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;Bouchaud-Mézard&lt;/strong&gt; model is a cornerstone of econophysics. It describes how wealth is accumulated and redistributed in a population of agents interacting on a exchange network.&lt;/p&gt;
+&lt;p&gt;The evolution of wealth $x_i$ of agent $i$ follows the following coupled SDE:
+$$dx_i(t) = J \sum_{j \in \partial i} (x_j(t) - x_i(t)) dt + \sigma x_i(t) d\eta_i(t),$$
+where $J \sum_{j \in \partial i} (x_j(t) - x_i(t))$ represents the exchange of wealth with neighboring agents, while $\sigma x_i(t) d\eta_i(t)$ represents the change of wealth due to investment in the stock-market. We defined $\partial i$ as the neighborood of agent $i$.&lt;/p&gt;
+&lt;p&gt;In this page you can test the model in real time. The widget shows the stationary distribution of normalized wealths. The computations are exectued by a &lt;strong&gt;FastAPI&lt;/strong&gt; backend on &lt;strong&gt;Hugging Face Spaces&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;interactive-simulator&#34;&gt;Interactive Simulator&lt;/h2&gt;
+&lt;div style=&#34;background: #222; padding: 25px; border: 1px solid #444; border-radius: 12px; color: #ffffff; margin: 20px 0;&#34;&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;N: Agents&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-N&#34; value=&#34;500&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;J: Interaction strength&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-J&#34; value=&#34;0.5&#34; step=&#34;0.1&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;σ: Noise strength (Volatility)&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-sigma&#34; value=&#34;0.2&#34; step=&#34;0.1&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 20px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;Network Type&lt;/label&gt;
+        &lt;select id=&#34;param-graph&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+            &lt;option value=&#34;random_regular&#34;&gt;Random Regular&lt;/option&gt;
+            &lt;option value=&#34;erdos_renyi&#34;&gt;Erdős-Rényi&lt;/option&gt;
+            &lt;option value=&#34;watts_strogatz&#34;&gt;Watts-Strogatz&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;k: Average connectivity&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-k&#34; value=&#34;5&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;Iterations&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-steps&#34; value=&#34;1000&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;button id=&#34;run-btn&#34; onclick=&#34;runSimulation()&#34; style=&#34;width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;&#34;&gt;
+        Run Simulation
+    &lt;/button&gt;
+    &lt;p id=&#34;status&#34; style=&#34;text-align: center; margin-top: 15px; color: #aaa; min-height: 20px;&#34;&gt;&lt;/p&gt;
+    &lt;img id=&#34;simulation-plot&#34; src=&#34;&#34; style=&#34;width: 100%; display: none; margin-top: 20px; border-radius: 8px; border: 1px solid #444;&#34;&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://Mattiatarabolo.github.io/js/bouchaud_mezard.js&#34;&gt;&lt;/script&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical Notes&lt;/h2&gt;
+&lt;p&gt;The numerical integration uses the &lt;strong&gt;Milstein&lt;/strong&gt; scheme. If the simulation does not start immediatelly, the server hosting the code could be &amp;ldquo;awakening&amp;rdquo;: please try to run it again after few minutes.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mattia Tarabolo</title>
+    <link>https://Mattiatarabolo.github.io/</link>
+      <atom:link href="https://Mattiatarabolo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mattia Tarabolo</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 08 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://Mattiatarabolo.github.io/media/icon_hu9d4be0919d22f6aed9d28e29cfe13049_8135_512x512_fill_lanczos_center_3.png</url>
+      <title>Mattia Tarabolo</title>
+      <link>https://Mattiatarabolo.github.io/</link>
+    </image>
+    
+    <item>
+      <title>Bouchaud-Mézard Model</title>
+      <link>https://Mattiatarabolo.github.io/miscellaneous/bouchaud_mezard/</link>
+      <pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/miscellaneous/bouchaud_mezard/</guid>
+      <description>&lt;h2 id=&#34;descrizione-del-progetto&#34;&gt;Descrizione del Progetto&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;Bouchaud-Mézard&lt;/strong&gt; model is a cornerstone of econophysics. It describes how wealth is accumulated and redistributed in a population of agents interacting on a exchange network.&lt;/p&gt;
+&lt;p&gt;The evolution of wealth $x_i$ of agent $i$ follows the following coupled SDE:
+$$dx_i(t) = J \sum_{j \in \partial i} (x_j(t) - x_i(t)) dt + \sigma x_i(t) d\eta_i(t),$$
+where $J \sum_{j \in \partial i} (x_j(t) - x_i(t))$ represents the exchange of wealth with neighboring agents, while $\sigma x_i(t) d\eta_i(t)$ represents the change of wealth due to investment in the stock-market. We defined $\partial i$ as the neighborood of agent $i$.&lt;/p&gt;
+&lt;p&gt;In this page you can test the model in real time. The widget shows the stationary distribution of normalized wealths. The computations are exectued by a &lt;strong&gt;FastAPI&lt;/strong&gt; backend on &lt;strong&gt;Hugging Face Spaces&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;interactive-simulator&#34;&gt;Interactive Simulator&lt;/h2&gt;
+&lt;div style=&#34;background: #222; padding: 25px; border: 1px solid #444; border-radius: 12px; color: #ffffff; margin: 20px 0;&#34;&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;N: Agents&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-N&#34; value=&#34;500&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;J: Interaction strength&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-J&#34; value=&#34;0.5&#34; step=&#34;0.1&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;σ: Noise strength (Volatility)&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-sigma&#34; value=&#34;0.2&#34; step=&#34;0.1&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 20px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;Network Type&lt;/label&gt;
+        &lt;select id=&#34;param-graph&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+            &lt;option value=&#34;random_regular&#34;&gt;Random Regular&lt;/option&gt;
+            &lt;option value=&#34;erdos_renyi&#34;&gt;Erdős-Rényi&lt;/option&gt;
+            &lt;option value=&#34;watts_strogatz&#34;&gt;Watts-Strogatz&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;k: Average connectivity&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-k&#34; value=&#34;5&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;margin-bottom: 15px;&#34;&gt;
+        &lt;label style=&#34;display: block; font-weight: bold; margin-bottom: 5px;&#34;&gt;Iterations&lt;/label&gt;
+        &lt;input type=&#34;number&#34; id=&#34;param-steps&#34; value=&#34;1000&#34; style=&#34;width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;&#34;&gt;
+    &lt;/div&gt;
+    &lt;button id=&#34;run-btn&#34; onclick=&#34;runSimulation()&#34; style=&#34;width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;&#34;&gt;
+        Run Simulation
+    &lt;/button&gt;
+    &lt;p id=&#34;status&#34; style=&#34;text-align: center; margin-top: 15px; color: #aaa; min-height: 20px;&#34;&gt;&lt;/p&gt;
+    &lt;img id=&#34;simulation-plot&#34; src=&#34;&#34; style=&#34;width: 100%; display: none; margin-top: 20px; border-radius: 8px; border: 1px solid #444;&#34;&gt;
+&lt;/div&gt;
+&lt;script src=&#34;https://Mattiatarabolo.github.io/js/bouchaud_mezard.js&#34;&gt;&lt;/script&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;technical-notes&#34;&gt;Technical Notes&lt;/h2&gt;
+&lt;p&gt;The numerical integration uses the &lt;strong&gt;Milstein&lt;/strong&gt; scheme. If the simulation does not start immediatelly, the server hosting the code could be &amp;ldquo;awakening&amp;rdquo;: please try to run it again after few minutes.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sparse Interactions Reshape Stability in Random Lotka-Volterra Dynamics</title>
+      <link>https://Mattiatarabolo.github.io/publication/tarabolo-stability-of-sparse-ecosystems-2025/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/tarabolo-stability-of-sparse-ecosystems-2025/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Small-Coupling Dynamic Cavity: A Bayesian Mean-Field Framework for Epidemic Inference</title>
+      <link>https://Mattiatarabolo.github.io/publication/braunstein-smallcoupling-dynamic-cavity-2025/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/braunstein-smallcoupling-dynamic-cavity-2025/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gaussian Approximation of Dynamic Cavity Equations for Linearly-Coupled Stochastic Dynamics</title>
+      <link>https://Mattiatarabolo.github.io/publication/tarabolo-gaussian-approximation-dynamic-2025/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/tarabolo-gaussian-approximation-dynamic-2025/</guid>
+      <description>&lt;p&gt;Add the &lt;strong&gt;full text&lt;/strong&gt; or &lt;strong&gt;supplementary notes&lt;/strong&gt; for the publication here using Markdown formatting.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Variable Selection for Environment-Dependent Phylogenetic Models of Diversification</title>
+      <link>https://Mattiatarabolo.github.io/publication/tarabolo-bayesian-variable-selection-2022/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/tarabolo-bayesian-variable-selection-2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Estrazione di numeri primi da un flusso di bit casuali</title>
+      <link>https://Mattiatarabolo.github.io/publication/tarabolo-estrazione-di-numeri-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/publication/tarabolo-estrazione-di-numeri-2020/</guid>
+      <description>&lt;p&gt;Add the &lt;strong&gt;full text&lt;/strong&gt; or &lt;strong&gt;supplementary notes&lt;/strong&gt; for the publication here using Markdown formatting.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://Mattiatarabolo.github.io/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CV</title>
+      <link>https://Mattiatarabolo.github.io/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/cv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gaussian approximation of dynamic cavity equations for linearly-coupled stochastic dynamics</title>
+      <link>https://Mattiatarabolo.github.io/project/gecam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/project/gecam/</guid>
+      <description>&lt;p&gt;Stochastic models on diluted networks are fundamental tools for understanding various systems, yet their analytical solutions are often elusive. In this paper, we adapt the cavity method to handle continuous time and variables, providing a basis for our analysis. We then employ a second-order expansion in interaction strength to effectively address systems with additive thermal noise and linear drifts. Additionally, we introduce a closure scheme, utilizing a perturbative expansion tailored for accommodating dynamics featuring non-linear drifts or non-additive noise. Our method offers a systematic approach to analyzing complex network dynamics, with potential applications in diverse fields.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SCDC: Small-Coupling Dynamic Cavity method for epidemic inference</title>
+      <link>https://Mattiatarabolo.github.io/project/scdc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/project/scdc/</guid>
+      <description>&lt;p&gt;We developed a novel generalized mean field approximation, called the Small-Coupling Dynamic Cavity (SCDC) method, for Bayesian epidemic inference and risk assessment. The method is developed within a fully Bayesian framework and accounts for non-causal effects generated by the presence of observations. It is based on a graphical model representation of the epidemic stochastic process and utilizes dynamic cavity equations to derive a set of self-consistent equations for probability marginals defined on the edges of the contact graph. By performing a small-coupling expansion, a pair of time-dependent cavity messages is obtained, which capture the probability of individual infection and the conditioning power of observations. In its efficient formulation, the SCDC algorithm is linear in the duration of the epidemic dynamics and in the number of contacts.
+The SCDC method is derived for the Susceptible-Infected (SI) model and straightforwardly applicable to other Markovian epidemic processes, including recurrent ones. It exhibits high accuracy in assessing individual risk comparable with Belief Propagation techniques, outperforming heuristic methods based on individual-based mean-field approximations.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sparse interactions reshape stability in Complex Ecosystems</title>
+      <link>https://Mattiatarabolo.github.io/project/ecosytems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://Mattiatarabolo.github.io/project/ecosytems/</guid>
+      <description>&lt;p&gt;Classical approaches to ecological stability rely on fully connected interaction models, yet real ecosystems are sparse and structured&amp;ndash;a feature that qualitatively reshapes their collective dynamics. Here, we establish a thermodynamically exact stability phase diagram for generalized Lotka-Volterra dynamics on sparse random graphs, resolving how finite connectivity and interaction heterogeneity jointly govern ecosystem resilience. Using a small-coupling expansion of the dynamic cavity method, we derive an effective single-site stochastic process that is solvable via population dynamics. Our approach uncovers a topological phase transition&amp;ndash;driven purely by the finite connectivity structure of the network&amp;ndash;that leads to multi-stability. This instability is fundamentally distinct from the disorder-driven transitions induced by quenched randomness of the couplings. Our framework overcomes the considerable computational cost of direct simulations, offering a scalable and versatile analysis of stability, biodiversity, and alternative stable states in realistic, large-scale ecological ecosystems.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
