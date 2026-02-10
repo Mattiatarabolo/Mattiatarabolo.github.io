@@ -808,16 +808,16 @@ where $J \sum_{j \in \partial i} (x_j(t) - x_i(t))$ represents the exchange of w
 <h2 id="interactive-simulator">Interactive Simulator</h2>
 <div style="background: #222; padding: 25px; border: 1px solid #444; border-radius: 12px; color: #ffffff; margin: 20px 0;">
     <div style="margin-bottom: 15px;">
-        <label style="display: block; font-weight: bold; margin-bottom: 5px;">N: Agents</label>
-        <input type="number" id="param-N" value="500" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;">
+        <label style="display: block; font-weight: bold; margin-bottom: 5px;">Agents N: <span id="val-N">500</span></label>
+        <input type="range" id="param-N" min="1" max="5000" step="1" value="500" oninput="document.getElementById('val-N').innerText = this.value" style="width: 100%; cursor: pointer;">
     </div>
     <div style="margin-bottom: 15px;">
-        <label style="display: block; font-weight: bold; margin-bottom: 5px;">J: Interaction strength</label>
-        <input type="number" id="param-J" value="0.5" step="0.1" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;">
+        <label style="display: block; font-weight: bold; margin-bottom: 5px;">Interaction strength (Liquidity) J: <span id="val-J">0.5</span></label>
+        <input type="range" id="param-J" min="0" max="10" step="0.1" value="0.5" oninput="document.getElementById('val-J').innerText = this.value" style="width: 100%; cursor: pointer;">
     </div>
     <div style="margin-bottom: 15px;">
-        <label style="display: block; font-weight: bold; margin-bottom: 5px;">σ: Noise strength (Volatility)</label>
-        <input type="number" id="param-sigma" value="0.2" step="0.1" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;">
+        <label style="display: block; font-weight: bold; margin-bottom: 5px;">Noise strength (Volatility) σ: <span id="val-sigma">0.5</span></label>
+        <input type="range" id="param-sigma" min="0" max="10" step="0.1" value="0.5" oninput="document.getElementById('val-sigma').innerText = this.value" style="width: 100%; cursor: pointer;">
     </div>
     <div style="margin-bottom: 20px;">
         <label style="display: block; font-weight: bold; margin-bottom: 5px;">Network Type</label>
@@ -828,12 +828,12 @@ where $J \sum_{j \in \partial i} (x_j(t) - x_i(t))$ represents the exchange of w
         </select>
     </div>
     <div style="margin-bottom: 15px;">
-        <label style="display: block; font-weight: bold; margin-bottom: 5px;">k: Average connectivity</label>
-        <input type="number" id="param-k" value="5" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;">
+        <label style="display: block; font-weight: bold; margin-bottom: 5px;">Average connectivity k: <span id="val-k">5</span></label>
+        <input type="range" id="param-k" min="3" max="5000" step="1" value="5" oninput="document.getElementById('val-k').innerText = this.value" style="width: 100%; cursor: pointer;">
     </div>
     <div style="margin-bottom: 15px;">
-        <label style="display: block; font-weight: bold; margin-bottom: 5px;">Iterations</label>
-        <input type="number" id="param-steps" value="1000" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff;">
+        <label style="display: block; font-weight: bold; margin-bottom: 5px;">Iterations: <span id="val-steps">1000</span></label>
+        <input type="range" id="param-steps" min="1" max="10000" step="1" value="1000" oninput="document.getElementById('val-steps').innerText = this.value" style="width: 100%; cursor: pointer;">
     </div>
     <button id="run-btn" onclick="runSimulation()" style="width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;">
         Run Simulation
